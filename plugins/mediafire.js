@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { cmd } = require("../popkid");
+const { cmd } = require("../command");
 
 cmd({
   pattern: "mediafire",
