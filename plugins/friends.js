@@ -8,7 +8,7 @@ cmd({
     category: "fun",
     react: "🤍",
     filename: __filename
-}, async (conn, mek, m, { reply }) => {
+}, async (conn, mek, m, { from }) => {
     try {
         // ✅ Customize your friends here
         const friendsList = [
@@ -27,9 +27,9 @@ ${friendsList.join("\n")}
 
 ✨ Always loyal • Always shining ✨`;
 
-        reply(msg);
+        await conn.sendMessage(from, { text: msg }, { quoted: mek });
     } catch (err) {
-        reply("❌ Error showing friends list.");
+        await conn.sendMessage(from, { text: "❌ Error showing friends list." }, { quoted: mek });
         console.error(err);
     }
 });
