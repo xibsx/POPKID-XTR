@@ -11,7 +11,7 @@ cmd({
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/mrpopkid/POPKID-XTR';
+    const githubRepoURL = 'https://github.com/kenyanpopkid/POPKID-XTR';
     const imageURL = 'https://files.catbox.moe/tbdd5d.jpg';
 
     try {
