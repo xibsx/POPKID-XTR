@@ -37,7 +37,7 @@
 
 ### 1. Fork this Repo
 Click below to fork:  
-[![FORK_REPOSITORY](https://img.shields.io/badge/FORK_REPOSITORY-FF5500?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/kenyanpopkid/fork)
+[![FORK_REPOSITORY](https://img.shields.io/badge/FORK_REPOSITORY-FF5500?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://github.com/kenyanpopkid/POPKID-XTR)
 
 ---
 
@@ -51,20 +51,20 @@ Get your session:
 
 | Heroku | Railway |
 |--------|---------|
-| [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffff)](https://heroku.com/deploy?template=https://github.com/kenyanpopkid) | [![Railway](https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000)](https://railway.app/new/template?template=https://github.com/kenyanpopkid) |
+| [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffff)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fkenyanpopkid%2FPOPKID-XTR) | [![Railway](https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000)](https://railway.app/new/template?template=https://github.com/kenyanpopkid/POPKID-XTR) |
 
 | Render | Koyeb |
 |--------|-------|
-| [![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white&labelColor=000000&color=00ffaa)](https://render.com/deploy?repo=https://github.com/kenyanpopkid) | [![Koyeb](https://img.shields.io/badge/Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white&labelColor=000000)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/kenyanpopkid) |
+| [![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white&labelColor=000000&color=00ffaa)](https://render.com/deploy?repo=https://github.com/kenyanpopkid/POPKID-XTR) | [![Koyeb](https://img.shields.io/badge/Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white&labelColor=000000)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/kenyanpopkid/POPKID-XTR) |
 
 | Katabumb |
 |----------|
-| [![Katabumb](https://img.shields.io/badge/KATABUMB-00ccff?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://katabump.com/deploy?template=https://github.com/kenyanpopkid) |
+| [![Katabumb](https://img.shields.io/badge/KATABUMB-00ccff?style=for-the-badge&logo=github&logoColor=white&labelColor=000000)](https://katabump.com/deploy?template=https://github.com/kenyanpopkid-POPKID-XTR) |
 
 ---
 
 ## ⚙️ Local Installation
 ```bash
-git clone https://github.com/kenyanpopkid/<repo-name>.git
+git clone https://github.com/kenyanpopkid/POPKID-XTR.git
 cd <repo-name>
 npm install
