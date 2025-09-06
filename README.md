@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
 </p>
 
-# POPKID BOT
+# POPKID XTR BOT
 > A powerful WhatsApp bot created by **KenyanPopKid**. Easy to deploy, packed with features, and always online ⚡
 
 ![PopKid](https://i.ibb.co/cSS7cxH2/popkid.jpg)
