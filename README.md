@@ -51,7 +51,7 @@ Get your session:
 
 | Heroku | Railway |
 |--------|---------|
-| [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffff)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fkenyanpopkid%2FPOPKID-XTR) | [![Railway](https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000)](https://railway.app/new/template?template=https://github.com/kenyanpopkid/POPKID-XTR) |
+| [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffff)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fxibsx%2FPOPKID-XTR) | [![Railway](https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000)](https://railway.app/new/template?template=https://github.com/kenyanpopkid/POPKID-XTR) |
 
 | Render | Koyeb |
 |--------|-------|
