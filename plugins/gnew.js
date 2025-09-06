@@ -1,7 +1,7 @@
 const { cmd } = require("../command");
 
 //
-// 🚀 Promote
+// 🆙 Promote
 //
 cmd({
   pattern: "promote1",
@@ -9,11 +9,10 @@ cmd({
   category: "group",
   react: "🆙",
   filename: __filename
-}, async (conn, mek, m, { from, isGroup, isAdmin, isBotAdmin, reply, args }) => {
+}, async (conn, mek, m, { from, args }) => {
   try {
-    if (!isGroup) return reply("❌ This command works only in groups.");
-    if (!isAdmin) return reply("❌ Only group admins can use this command.");
-    if (!isBotAdmin) return reply("❌ I need to be an *admin* to promote someone.");
+    if (!mek.key.remoteJid.endsWith("@g.us"))
+      return await conn.sendMessage(from, { text: "❌ Group only." }, { quoted: mek });
 
     let target;
     if (mek.message.extendedTextMessage?.contextInfo?.mentionedJid) {
@@ -21,14 +20,14 @@ cmd({
     } else if (args[0]) {
       target = args[0].replace(/[^0-9]/g, "") + "@s.whatsapp.net";
     } else {
-      return reply("❌ Mention or provide the number of the user to promote.");
+      return await conn.sendMessage(from, { text: "❌ Mention or type number." }, { quoted: mek });
     }
 
     await conn.groupParticipantsUpdate(from, [target], "promote");
-    reply(`✅ Promoted @${target.split("@")[0]} to *admin*!`);
+    await conn.sendMessage(from, { text: `✅ Promoted @${target.split("@")[0]} to admin!`, mentions: [target] }, { quoted: mek });
   } catch (err) {
     console.error(err);
-    reply("❌ Failed to promote user.");
+    await conn.sendMessage(from, { text: "❌ Failed to promote user." }, { quoted: mek });
   }
 });
 
@@ -41,11 +40,10 @@ cmd({
   category: "group",
   react: "🔽",
   filename: __filename
-}, async (conn, mek, m, { from, isGroup, isAdmin, isBotAdmin, reply, args }) => {
+}, async (conn, mek, m, { from, args }) => {
   try {
-    if (!isGroup) return reply("❌ This command works only in groups.");
-    if (!isAdmin) return reply("❌ Only group admins can use this command.");
-    if (!isBotAdmin) return reply("❌ I need to be an *admin* to demote someone.");
+    if (!mek.key.remoteJid.endsWith("@g.us"))
+      return await conn.sendMessage(from, { text: "❌ Group only." }, { quoted: mek });
 
     let target;
     if (mek.message.extendedTextMessage?.contextInfo?.mentionedJid) {
@@ -53,19 +51,19 @@ cmd({
     } else if (args[0]) {
       target = args[0].replace(/[^0-9]/g, "") + "@s.whatsapp.net";
     } else {
-      return reply("❌ Mention or provide the number of the user to demote.");
+      return await conn.sendMessage(from, { text: "❌ Mention or type number." }, { quoted: mek });
     }
 
     await conn.groupParticipantsUpdate(from, [target], "demote");
-    reply(`✅ Demoted @${target.split("@")[0]} to *member*!`);
+    await conn.sendMessage(from, { text: `✅ Demoted @${target.split("@")[0]} to member!`, mentions: [target] }, { quoted: mek });
   } catch (err) {
     console.error(err);
-    reply("❌ Failed to demote user.");
+    await conn.sendMessage(from, { text: "❌ Failed to demote user." }, { quoted: mek });
   }
 });
 
 //
-// ❌ Kick
+// 🚪 Kick
 //
 cmd({
   pattern: "kick1",
@@ -73,11 +71,10 @@ cmd({
   category: "group",
   react: "🚪",
   filename: __filename
-}, async (conn, mek, m, { from, isGroup, isAdmin, isBotAdmin, reply, args }) => {
+}, async (conn, mek, m, { from, args }) => {
   try {
-    if (!isGroup) return reply("❌ This command works only in groups.");
-    if (!isAdmin) return reply("❌ Only group admins can use this command.");
-    if (!isBotAdmin) return reply("❌ I need to be an *admin* to kick someone.");
+    if (!mek.key.remoteJid.endsWith("@g.us"))
+      return await conn.sendMessage(from, { text: "❌ Group only." }, { quoted: mek });
 
     let target;
     if (mek.message.extendedTextMessage?.contextInfo?.mentionedJid) {
@@ -85,14 +82,14 @@ cmd({
     } else if (args[0]) {
       target = args[0].replace(/[^0-9]/g, "") + "@s.whatsapp.net";
     } else {
-      return reply("❌ Mention or provide the number of the user to kick.");
+      return await conn.sendMessage(from, { text: "❌ Mention or type number." }, { quoted: mek });
     }
 
     await conn.groupParticipantsUpdate(from, [target], "remove");
-    reply(`✅ Kicked @${target.split("@")[0]} from the group!`);
+    await conn.sendMessage(from, { text: `✅ Kicked @${target.split("@")[0]} from the group!`, mentions: [target] }, { quoted: mek });
   } catch (err) {
     console.error(err);
-    reply("❌ Failed to kick user.");
+    await conn.sendMessage(from, { text: "❌ Failed to kick user." }, { quoted: mek });
   }
 });
 
@@ -105,21 +102,20 @@ cmd({
   category: "group",
   react: "➕",
   filename: __filename
-}, async (conn, mek, m, { from, isGroup, isAdmin, isBotAdmin, reply, args }) => {
+}, async (conn, mek, m, { from, args }) => {
   try {
-    if (!isGroup) return reply("❌ This command works only in groups.");
-    if (!isAdmin) return reply("❌ Only group admins can use this command.");
-    if (!isBotAdmin) return reply("❌ I need to be an *admin* to add someone.");
+    if (!mek.key.remoteJid.endsWith("@g.us"))
+      return await conn.sendMessage(from, { text: "❌ Group only." }, { quoted: mek });
 
-    if (!args[0]) return reply("❌ Provide a number to add. Example: `.add 254700000000`");
+    if (!args[0]) return await conn.sendMessage(from, { text: "❌ Provide a number. Example: .add 254700000000" }, { quoted: mek });
 
     let number = args[0].replace(/[^0-9]/g, "");
     let target = number + "@s.whatsapp.net";
 
     await conn.groupParticipantsUpdate(from, [target], "add");
-    reply(`✅ Added @${number} to the group!`);
+    await conn.sendMessage(from, { text: `✅ Added @${number} to the group!`, mentions: [target] }, { quoted: mek });
   } catch (err) {
     console.error(err);
-    reply("❌ Failed to add user. (Check if the number is on WhatsApp)");
+    await conn.sendMessage(from, { text: "❌ Failed to add user (maybe number not on WhatsApp)." }, { quoted: mek });
   }
 });
