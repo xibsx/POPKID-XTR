@@ -11,9 +11,8 @@
       "description": "🔑 Your WhatsApp session ID (Get this from your bot provider)",
       "required": true,
       "value": ""
-    },
-
-    
+    }
+  },
 
   "buildpacks": [
     {
